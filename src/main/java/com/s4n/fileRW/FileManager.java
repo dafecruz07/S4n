@@ -7,15 +7,21 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- * 
  * @author DCross
- *
+ * Class used to file management as read folder and file write and read.
  */
 public class FileManager {
 	
-	
+	/**
+	 * Constructor
+	 */
 	public FileManager() { }
 	
+	/**
+	 * Method used to read all files in a folder
+	 * @param folderPath Path of the folder to be read
+	 * @return An array with all files contained in the folder
+	 */
 	public File[] folderReader(String folderPath) {
 		File folder = new File(folderPath);
 		File[] listOfFiles = folder.listFiles();
@@ -23,6 +29,11 @@ public class FileManager {
 		return listOfFiles;
 	}
 	
+	/**
+	 * Method used to read the information in a file
+	 * @param filePath Path of the file to be read
+	 * @return An String with all information contained in the file
+	 */
 	public String fileReader(String filePath) {
 		String content = "";
 		 
@@ -36,6 +47,13 @@ public class FileManager {
         return content;
 	}
 	
+	/**
+	 * Method used to write information in a file on an specific location
+	 * @param folderPath Path of the folder where the file will be written
+	 * @param id Information used to create the file name
+	 * @param data The information to be written in the file
+	 * @throws IOException
+	 */
 	public void fileWriter(String folderPath, String id, String data) throws IOException {
 	    FileOutputStream outputStream = new FileOutputStream(folderPath + "\\out"+ id + ".txt");
 	    byte[] strToBytes = data.getBytes();
@@ -43,23 +61,4 @@ public class FileManager {
 
 	    outputStream.close();
 	}
-	
-	public static void main(String[] args) throws IOException {
-		
-//		FileManager fileManagement = new FileManager();
-//		String folderPathIn		= "C:\\Users\\DCross\\Desktop\\S4N\\In";
-//		String folderPathOut	= "C:\\Users\\DCross\\Desktop\\S4N\\Out";
-//		String filePath 		= "C:\\Users\\DCross\\Desktop\\S4N\\In\\in01.txt";
-//		String fileData			= "== Reporte de entregas ==\r\n"
-//								+ "(-2, 4) dirección Norte\r\n"
-//								+ "(-3, 3) dirección Sur\r\n"
-//								+ "(-4, 2) dirección Oriente"
-//								+ "Se ha alcanzado el limite de entregas del Dron, se retorna al centro de distribución";
-//		
-//		fileManagement.folderReader(filePath);
-//		fileManagement.fileReader(filePath);
-//		fileManagement.fileWriter(folderPathOut, "01", fileData);
-	}
-	
-
 }

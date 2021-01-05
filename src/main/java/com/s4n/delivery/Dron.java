@@ -7,7 +7,7 @@ import java.util.concurrent.Callable;
 
 /**
  * @author Danny Cruz
- * 
+ * Class used to manage main Dron actions
  */
 public class Dron implements Callable<String>{
 	
@@ -18,7 +18,10 @@ public class Dron implements Callable<String>{
 	private String		deliveriInstructions;
 	
 	/**
-	 * @param bound
+	 * Constructor
+	 * @param id			Dron identifier
+	 * @param bound			Limit to move in the field
+	 * @param deliveryLimit	Limit to delivery
 	 */
 	public Dron(String id, int bound, int deliveryLimit) {
 		this.id						= id;
@@ -28,6 +31,10 @@ public class Dron implements Callable<String>{
 		this.deliveriInstructions	= "";
 	}
 	
+	/**
+	 * This method inspect the delivery instructions (if assigned) and make each on of the delivery
+	 * @return An String that contains each one of the deliveries and adtional information if was generated.
+	 */
 	public String move() {
 		
 		if(deliveriInstructions != null && !deliveriInstructions.isEmpty()) {
@@ -82,6 +89,9 @@ public class Dron implements Callable<String>{
 			return "No se cuenta con una ruta de reparto asignada";
 	}
 	
+	/**
+	 * Method used to run a threat for each dron
+	 */
 	@Override
 	public String call() throws Exception {
 		String report = "";

@@ -1,9 +1,8 @@
 package com.s4n.delivery;
 
 /**
- * 
  * @author DCross
- *
+ * Class used to manage basic compass directions
  */
 public enum Direction {
 	NORTE("Norte"),
@@ -13,6 +12,9 @@ public enum Direction {
 	
 	private String direction;
 	
+	/**
+	 * Constructor always start looking to Norte
+	 */
 	private Direction() { this.direction = "Norte"; }
 
 	/**

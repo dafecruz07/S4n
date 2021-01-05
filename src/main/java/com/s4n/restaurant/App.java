@@ -1,7 +1,6 @@
 package com.s4n.restaurant;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
@@ -13,6 +12,10 @@ import java.util.concurrent.Future;
 import com.s4n.delivery.Dron;
 import com.s4n.fileRW.FileManager;
 
+/**
+ * @author DCross
+ * Class used to run the restaurant application
+ */
 public class App {
 	private BufferedReader	br;
 	private ExecutorService	service;
@@ -39,7 +42,7 @@ public class App {
 			restaurant = new Restaurant();
 		}
 		
-		System.out.print("Por favor ingerese la ruta de la carpeta donde se encuentran las instrucciones de entrega (C:/xxx/xxx/folder/): ");
+		System.out.print("Por favor ingrese la ruta de la carpeta donde se encuentran las instrucciones de entrega (C:/xxx/xxx/folder/): ");
 		
 		String path = br.readLine();
 		
@@ -59,6 +62,7 @@ public class App {
 		System.out.println("Entregas finalizadas, los reportes de entregas se encuentran en la misma ruta de instrucciones de entrega '" + path + "'");
 	}
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws IOException, InterruptedException, ExecutionException {
 		App app = new App();
 	}

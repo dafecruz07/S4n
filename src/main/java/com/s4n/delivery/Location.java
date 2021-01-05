@@ -1,9 +1,8 @@
 package com.s4n.delivery;
 
 /**
- * 
  * @author DCross
- *
+ * Class Location used to manage the coodinates in an XY plane, make use of direction
  */
 public class Location {
 	private int			posX;
@@ -20,7 +19,7 @@ public class Location {
 	}
 	
 	/**
-	 * 
+	 * This method change the direction to look, giving one 90° spin to the left
 	 */
 	public void turnLeft() {
 		switch(direction){
@@ -40,7 +39,7 @@ public class Location {
 	}
 	
 	/**
-	 * 
+	 * This method change the direction to look, giving one 90° spin to the right
 	 */
 	public void turnRight() {
 		switch(direction){
@@ -59,6 +58,10 @@ public class Location {
 		}
 	}
 	
+	/**
+	 * This method foward one step into the looking direction.
+	 * @return distance to origin on the axis that has been moved
+	 */
 	public int foward() {
 		switch(direction){
 			case NORTE :
@@ -78,7 +81,7 @@ public class Location {
 	}
 	
 	/**
-	 * 
+	 * This method print the actual location and actual looking direction
 	 * @return
 	 */
 	public String printLocation() {
@@ -86,7 +89,7 @@ public class Location {
 	}
 	
 	/**
-	 * 
+	 * This methos reset the location to origin (0, 0) an loking direction to Norte
 	 */
 	public void resetLocation() {
 		posY = 0;
